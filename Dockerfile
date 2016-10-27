@@ -1,7 +1,7 @@
 # Compiles and installs an fdroid environment
 
-FROM debian:jessie
-MAINTAINER Mathias Monnerville <matm@outofpluto.com>
+FROM ubuntu:16.10
+MAINTAINER Cui Pengfei <cuipengfei2008@gmail.com>
 
 # Enable i386 arch (for android SDK)
 RUN dpkg --add-architecture i386
