@@ -14,7 +14,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
     git \
     openjdk-7-jdk \
     wget \
-    libjpeg62-dev \
+    fdroidserver \
     zlib1g-dev \
     libstdc++6:i386 \
     zlib1g:i386
@@ -32,10 +32,6 @@ ENV PATH $PATH:$ANDROID_HOME/platform-tools
 
 # Install latest android (19 / 4.4.2) tools and system image.
 RUN echo "y" | android update sdk --no-ui --force --filter platform-tools,android-19,build-tools-19.1.0,sysimg-19
-
-RUN mkdir /src && cd /src && git clone https://gitlab.com/fdroid/fdroidserver.git && \
-    git clone https://gitlab.com/fdroid/fdroiddata.git
-RUN cd /src/fdroidserver && python setup.py install
 
 ADD config.py /apk/
 ADD fdroid-icon.png /apk/
