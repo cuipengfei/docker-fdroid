@@ -7,6 +7,7 @@ MAINTAINER Cui Pengfei <cuipengfei2008@gmail.com>
 RUN dpkg --add-architecture i386
 
 # Required dependencies
+RUN apt-get install software-properties-common
 RUN add-apt-repository ppa:openjdk-r/ppa
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
