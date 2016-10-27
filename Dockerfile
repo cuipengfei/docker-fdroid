@@ -9,12 +9,11 @@ RUN dpkg --add-architecture i386
 # Required dependencies
 RUN apt-get update
 RUN apt-get install -y software-properties-common
-RUN add-apt-repository ppa:openjdk-r/ppa
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
     python-dev \
     python-pip \
     git \
-    openjdk-7-jdk \
+    default-jdk \
     wget \
     fdroidserver \
     zlib1g-dev \
