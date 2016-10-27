@@ -1,3 +1,3 @@
 #!/bin/sh
 
-cd /apk && fdroid update -c && fdroid update
+cd /apk && fdroid init && fdroid update -c && fdroid update
