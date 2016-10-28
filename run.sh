@@ -2,11 +2,19 @@
 
 cd /apk
 tree
-pwd
+
+echo "@@@ init"
 fdroid init
-pwd
+tree
+
+echo "@@@ create key"
 fdroid update --create-key
-pwd
+tree
+
+echo "@@@ update-c"
 fdroid update -c
-pwd
+tree
+
+echo "@@@ update"
 fdroid update
+tree

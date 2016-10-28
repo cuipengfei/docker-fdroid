@@ -35,11 +35,9 @@ ENV PATH $PATH:$ANDROID_HOME/platform-tools
 # Install latest android (19 / 4.4.2) tools and system image.
 RUN echo "y" | android update sdk --no-ui --force --filter platform-tools,android-19,build-tools-19.1.0,sysimg-19
 
-ADD config.py /apk/
-ADD fdroid-icon.png /apk/
 ADD run.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/run.sh
 
-VOLUME ["/apk/repo"]
+VOLUME ["/apk"]
 
 CMD ["/usr/local/bin/run.sh"]
