@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd /apk
-fdroid init
-fdroid update --create-key
-fdroid update -c
-fdroid update
+cd /apk && (fdroid init||true)
+cd /apk && (fdroid update --create-key||true)
+cd /apk && (fdroid update -c||true)
+cd /apk && fdroid update
