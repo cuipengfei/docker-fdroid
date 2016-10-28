@@ -13,6 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
     python-dev \
     python-pip \
     git \
+    tree \
     default-jdk \
     wget \
     fdroidserver \

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 cd /apk
+tree
 pwd
 fdroid init
 pwd
