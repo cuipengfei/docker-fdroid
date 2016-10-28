@@ -1,26 +1,30 @@
 #!/bin/sh
 
-cd /apk
-tree
+# keep refreshing the repo indefinitely
+i=1
+while [ "$i" -ne 0 ]
+do
 
-echo "@@@ start"
-date
+  echo "@@@ start"
+  date
 
-echo "@@@ init"
-fdroid init
-tree
+  cd /apk
 
-echo "@@@ create key"
-fdroid update --create-key
-tree
+  echo "@@@ init"
+  fdroid init
 
-echo "@@@ update-c"
-fdroid update -c
-tree
+  echo "@@@ create key"
+  fdroid update --create-key
 
-echo "@@@ update"
-fdroid update
-tree
+  echo "@@@ update-c"
+  fdroid update -c
 
-echo "@@@ end"
-date
+  echo "@@@ update"
+  fdroid update
+  tree
+
+  echo "@@@ end"
+  date
+
+  sleep 60
+done
