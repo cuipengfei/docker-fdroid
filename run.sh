@@ -3,6 +3,9 @@
 cd /apk
 tree
 
+echo "@@@ start"
+date
+
 echo "@@@ init"
 fdroid init
 tree
@@ -18,3 +21,6 @@ tree
 echo "@@@ update"
 fdroid update
 tree
+
+echo "@@@ end"
+date
