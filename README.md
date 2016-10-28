@@ -3,15 +3,15 @@ docker-fdroid
 
 A Docker image for publishing your own Android application store using F-Droid.
 
-The [F-Droid](https://f-droid.org/) server tools provide various scripts and tools 
-that are used to maintain the main F-Droid application repository. You can use these 
-same tools to create your own additional or alternative repository for publishing, 
+The [F-Droid](https://f-droid.org/) server tools provide various scripts and tools
+that are used to maintain the main F-Droid application repository. You can use these
+same tools to create your own additional or alternative repository for publishing,
 or to assist in creating, testing and submitting metadata to the main repository.
 
 This `gotsunami/fdroid` Docker image aims to ease the building of a "simple binary repository",
  as defined in [F-Droid's server manual](https://f-droid.org/manual/fdroid.html#Simple-Binary-Repository).
 
-That means only publishing of *binary APKs* is supported at the moment. If all you want is 
+That means only publishing of *binary APKs* is supported at the moment. If all you want is
 easily making available a bunch of Android applications to users through an F-Droid repository, with
 automatic app updates, this Docker image might do the trick.
 
@@ -39,9 +39,7 @@ If you need to install a web server for serving static content from this new rep
 just grab `nginx` and run it:
 
     $ docker pull nginx
-    $ docker run -d --name nginx-fdroid \
-        -v $APK_REPO:/usr/share/nginx/html:ro \
-        -p 8080:80 nginx
+    $ docker run -d --name nginx-fdroid -v $APK_REPO:/usr/share/nginx/html:ro -p 8080:80 nginx
 
 ### Customization
 

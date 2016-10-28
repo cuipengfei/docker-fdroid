@@ -32,7 +32,7 @@ gradle = "gradle"
 repo_maxage = 0
 
 repo_url = "https://MyFirstFDroidRepo.org/fdroid/repo"
-repo_name = "My First FDroid Repo Demo"
+repo_name = "FDroid Repo"
 repo_icon = "fdroid-icon.png"
 repo_description = """
 Here is the place for a long repo description.
