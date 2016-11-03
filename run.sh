@@ -2,7 +2,7 @@
 
 # refresh the repo whenever there is a apk file change
 
-while file=$(inotifywait -e delete -e close --format "%w%f" /apk/repo/); do
+while file=$(inotifywait -e delete -e close_write --format "%w%f" /apk/repo/); do
   EXT=${file##*.}
 
   if [ $EXT = "apk" ]
