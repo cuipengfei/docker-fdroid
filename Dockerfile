@@ -18,6 +18,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
     wget \
     fdroidserver \
     zlib1g-dev \
+    inotify-tools \
     libstdc++6:i386 \
     zlib1g:i386
 

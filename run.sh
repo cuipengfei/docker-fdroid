@@ -1,30 +1,35 @@
 #!/bin/sh
 
-# keep refreshing the repo indefinitely
-i=1
-while [ "$i" -ne 0 ]
-do
+# refresh the repo whenever there is a apk file change
 
-  echo "@@@ start"
-  date
+while file=$(inotifywait -e delete -e close --format "%w%f" ./ci/docker_jenkins_home/jh/workspace/publish-refui-to-fdroid/repo/); do
+  EXT=${file##*.}
 
-  cd /apk
+  if [ $EXT = "apk" ]
+  then
+    echo "detected apk file change"
+    echo $file
 
-  echo "@@@ init"
-  fdroid init
+    echo "@@@ start refreshing repo"
+    date
 
-  echo "@@@ create key"
-  fdroid update --create-key
+    cd /apk
 
-  echo "@@@ update-c"
-  fdroid update -c
+    echo "@@@ init"
+    fdroid init
 
-  echo "@@@ update"
-  fdroid update
-  tree
+    echo "@@@ create key"
+    fdroid update --create-key
 
-  echo "@@@ end"
-  date
+    echo "@@@ update-c"
+    fdroid update -c
 
-  sleep 60
+    echo "@@@ update"
+    fdroid update
+    tree
+
+    echo "@@@ end"
+    date
+
+  fi
 done
