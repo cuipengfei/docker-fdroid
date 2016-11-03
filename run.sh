@@ -2,7 +2,7 @@
 
 # refresh the repo whenever there is a apk file change
 
-while file=$(inotifywait -e delete -e close --format "%w%f" ./ci/docker_jenkins_home/jh/workspace/publish-refui-to-fdroid/repo/); do
+while file=$(inotifywait -e delete -e close --format "%w%f" /apk/repo/); do
   EXT=${file##*.}
 
   if [ $EXT = "apk" ]
